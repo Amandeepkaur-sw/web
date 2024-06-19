@@ -36,9 +36,9 @@ nav {
 }
 
 nav button {
-    background-color: #0056b3;
+    background-color: #f8f664;
     border: none;
-    color: white;
+    color: rgb(17, 1, 1);
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
