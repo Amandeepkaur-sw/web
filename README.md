@@ -1,2 +1,2 @@
-# web
-web
+# semantic web
+Semantic Web
