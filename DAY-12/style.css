@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0; /* Background color for the page */
+    background-color: hwb(350 26% 2%);; /* Background color for the page */
     margin: 0;
 }
 .pdf-container {
