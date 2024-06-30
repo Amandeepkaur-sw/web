@@ -3,11 +3,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #e72a50;
+    background: linear-gradient(to bottom, rgb(235, 87, 191), rgb(104, 194, 219));
 }
 
 header {
-    background-color: #eb3939;
+    background: linear-gradient(to bottom, rgb(235, 87, 191), rgb(104, 194, 219));
     text-align: center;
     padding: 20px;
 }
@@ -21,13 +21,13 @@ header .logo {
 header h1 {
     margin: 10px 0 5px;
     font-size: 24px;
-    color: #333;
+    color: #fffbfb;
 }
 
 header p, header h2 {
     margin: 5px 0;
     font-size: 16px;
-    color: #555;
+    color: #f9f7f7;
 }
 
 nav {
@@ -39,15 +39,16 @@ nav {
 nav button {
     background-color: #f8f664;
     border: none;
-    color: rgb(17, 1, 1);
+    color: rgb(252, 247, 247);
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50%;
+    
 }
 
 nav button:hover {
-    background-color: #003d7a;
+    background-color: #0a4c6d;
 }
 
 main {
@@ -61,7 +62,7 @@ main {
 
 .gallery h3 {
     font-size: 20px;
-    color: #333;
+    color: #f9f6f6;
 }
 
 .gallery-image {
@@ -75,7 +76,7 @@ main {
 
 .caption {
     font-size: 14px;
-    color: #777;
+    color: #120101;
 }
 
 footer {
