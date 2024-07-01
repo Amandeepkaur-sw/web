@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, rgb(235, 87, 191), rgb(104, 194, 219));
+    background: linear-gradient(to bottom,rgb(104, 194, 219),rgb(235, 87, 191));
 }
 
 header {
