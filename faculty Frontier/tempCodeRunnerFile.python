@@ -1,0 +1,50 @@
+
+A = {'x1': 0.2, 'x2': 0.7, 'x3': 1.0}
+B = {'x1': 0.5, 'x2': 0.4, 'x3': 0.8}
+
+def fuzzy_union(A, B):
+    return {x: max(A[x], B[x]) for x in A}
+
+def fuzzy_intersection(A, B):
+    return {x: min(A[x], B[x]) for x in A}
+
+def fuzzy_complement(A):
+    return {x: 1 - A[x] for x in A}
+
+def fuzzy_difference(A, B):
+    return {x: min(A[x], 1 - B[x]) for x in A}
+
+def cartesian_product(A, B):
+    return {(x, y): min(A[x], B[y]) for x in A for y in B}
+
+def max_min_composition(R1, R2):
+    result = {}
+    elements_R1 = {x[0] for x in R1}
+    elements_R2 = {x[1] for x in R2}
+
+    for x in elements_R1:
+        for z in elements_R2:
+            result[(x, z)] = max(min(R1.get((x, y), 0), R2.get((y, z), 0)) for y in {t[1] for t in R1})
+
+    return result
+
+def display_fuzzy_set(fuzzy_set, label):
+    print(f"\n{label}:")
+    for element, value in fuzzy_set.items():
+        print(f"  {element}: {value:.2f}")
+
+display_fuzzy_set(fuzzy_union(A, B), "Fuzzy Union of A and B")
+display_fuzzy_set(fuzzy_intersection(A, B), "Fuzzy Intersection of A and B")
+display_fuzzy_set(fuzzy_complement(A), "Fuzzy Complement of A")
+display_fuzzy_set(fuzzy_difference(A, B), "Fuzzy Difference (A - B)")
+
+fuzzy_relation_R1 = cartesian_product(A, B)
+display_fuzzy_set(fuzzy_relation_R1, "Fuzzy Relation (R1) - Cartesian Product of A and B")
+
+C = {'y1': 0.4, 'y2': 0.9}
+D = {'z1': 0.6, 'z2': 0.7}
+fuzzy_relation_R2 = cartesian_product(C, D)
+display_fuzzy_set(fuzzy_relation_R2, "Fuzzy Relation (R2) - Cartesian Product of C and D")
+
+composition_result = max_min_composition(fuzzy_relation_R1, fuzzy_relation_R2)
+display_fuzzy_set(composition_result, "Max-Min Composition of R1 and R2")
